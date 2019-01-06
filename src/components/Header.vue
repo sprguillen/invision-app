@@ -1,20 +1,13 @@
 <template>
-  <header>
+  <header data-aos="fade" data-aos-duration="3000">
     <nav class="navbar navbar-expand-lg nav-custom">
       <img src="../assets/jumpcut_logo.png" />
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <b-navbar-toggle target="nav_collapse" variant="light">
         <v-icon name="bars" class="color-white" />
-      </button>
+      </b-navbar-toggle>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <b-collapse is-nav id="nav_collapse">
+
         <ul class="navbar-nav mr-auto menu">
           <li class="nav-item">
             <a class="nav-link" href="#">MY COURSES</a>
@@ -42,7 +35,7 @@
             </a>
           </li>
         </ul>
-      </div>
+      </b-collapse>
     </nav>
   </header>
 </template>
@@ -79,8 +72,15 @@ export default {
 }
 
 .menu {
-  width: 65%;
   float: left;
+
+  @media screen and (min-width: $breakpoint-md) {
+    width: 65%;
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    width: 50%;
+  }
 }
 
 .menu li {
@@ -103,11 +103,19 @@ export default {
 }
 
 .side-menu {
-  width: 30%;
   float: right;
   position: relative;
-  left: 5rem;
   top: 0.5rem;
+
+  @media screen and (min-width: $breakpoint-md) {
+    width: 30%;
+    left: 5rem;
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    width: 50%;
+    left: 2rem;
+  }
 }
 
 .side-menu li {
@@ -128,6 +136,10 @@ span.avatar-name {
 }
 
 .toggler-white {
+  color: white;
+}
+
+.color-white {
   color: white;
 }
 </style>

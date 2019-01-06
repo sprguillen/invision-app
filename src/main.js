@@ -1,10 +1,12 @@
 import Vue from 'vue';
+import AOS from 'aos';
 import * as VueGoogleMaps from 'vue2-google-maps';
 import BootstrapVue from 'bootstrap-vue';
 import Icon from 'vue-awesome/components/Icon.vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'vue-awesome/icons';
+import 'aos/dist/aos.css';
 
 import App from './App.vue';
 import './scss/main.scss';
@@ -21,5 +23,8 @@ Vue.use(BootstrapVue);
 Vue.component('v-icon', Icon);
 
 new Vue({
+  created() {
+    AOS.init();
+  },
   render: h => h(App),
 }).$mount('#app');

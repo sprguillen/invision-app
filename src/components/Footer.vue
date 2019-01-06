@@ -50,6 +50,10 @@ export default {
 
 .left-side p {
   padding-bottom: 1rem;
+
+  @media screen and (max-width: $breakpoint-lg) {
+    text-align: center;
+  }
 }
 
 .right-side {

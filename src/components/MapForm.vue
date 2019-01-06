@@ -1,16 +1,24 @@
 <template>
-  <section>
+  <section data-aos="fade" data-aos-duration="3000">
     <div class="map-wrapper">
       <div class="map-content">
-        <div class="row">
-          <div class="col-lg-6 col-md-6">
+        <div class="row row-max-width">
+          <div class="mid-on-small col-lg-6 col-md-7 col-offset-md-5 col-sm-8 col-offset-sm-4">
             <h1>16 vloggers near Palau Ujong</h1>
             <p>Palau Ujong, Singapore &#183; 10 miles radius &#183; Vlog</p>
           </div>
-          <div class="col-lg-5 col-md-5">
+          <div class="
+            col-lg-6
+            col-md-7
+            col-offset-md-5
+            col-sm-9
+            col-offset-sm-3
+            col-10
+            col-offset-2"
+          >
             <button
               type="button"
-              class="col-lg-4 btn btn-dark adv-search-bttn"
+              class="col-lg-4 col-md-4 col-sm-8 col-8 btn btn-light adv-search-bttn"
             >Advanced Search</button>
           </div>
         </div>
@@ -27,148 +35,342 @@
         </div>
         <div class="result-grid ml-3">
           <div class="row">
-            <p>Viewing <strong>12</strong> or <strong>40</strong> results</p>
+            <p>Viewing <strong>12</strong> or <strong>12</strong> results</p>
           </div>
           <div class="row row-custom-margin">
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__odd">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Jane Doe" :size="avatarSize"></avatar>
+                  <strong>1. Jane Doe</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Cooking | Arts</span>
+                  </div>
+                  <div class="mt-1">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__even">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Robert Watajorski" :size="avatarSize"></avatar>
+                  <strong>2. Robert Watajorski</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Cooking | Arts</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__odd">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Hannah Montana" :size="avatarSize"></avatar>
+                  <strong>3. Hannah Montana</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Cooking | Arts</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__even">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Danny Ainge" :size="avatarSize"></avatar>
+                  <strong>4. Danny Ainge</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Cooking | Arts</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__odd">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Michael Jordan" :size="avatarSize"></avatar>
+                  <strong>5. Michael Jordan</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Cooking | Basketball</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__even">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Hakeem Olajuwon" :size="avatarSize"></avatar>
+                  <strong>6. Hakeem Olajuwon</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Cooking | Basketball</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__odd">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Victor Wooten" :size="avatarSize"></avatar>
+                  <strong>7. Victor Wooten</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Bass | Martial Arts</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__even">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="John Patitucci" :size="avatarSize"></avatar>
+                  <strong>8. John Patitucci</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Bass | Brazilian Culture</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__odd">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Roger Palageer" :size="avatarSize"></avatar>
+                  <strong>9. Roger Palageer</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Cooking | Daydreaming</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__even">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Zilly Zohan" :size="avatarSize"></avatar>
+                  <strong>10. Zilly Zohan</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Cooking | Espionage</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__odd">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Fredie Mercury" :size="avatarSize"></avatar>
+                  <strong>11. Freddie Mercury</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Cooking | Singing</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 card-grid-custom-margin">
-              <div class="card card-custom-width">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title
-                    and make up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="
+                col-lg-3
+                col-md-4
+                col-sm-6
+                col-12
+                card-grid-custom-margin
+              ">
+              <div class="card card-custom-width card-decor__even">
+                <div class="card-body text-center">
+                  <avatar class="centered" username="Mark Zuckemberg" :size="avatarSize"></avatar>
+                  <strong>12. Mark Zuckemberg</strong>
+                  <div class="text-center">
+                    <v-icon name="map-marker" class="card-icon" />
+                    <span>Bishan Singapore · 5 miles away</span>
+                  </div>
+                  <div class="text-center">
+                    <span>Vlog | Cooking | Programming</span>
+                  </div>
+                  <div class="mt-1 centered">
+                    <button class="btn btn-light-outline mr-3">View Channel</button>
+                    <button class="btn btn-light-outline">Send Message</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -179,11 +381,17 @@
   </section>
 </template>
 <script>
+import Avatar from 'vue-avatar';
+
 export default {
   name: 'MapForm',
+  components: {
+    Avatar,
+  },
   data() {
     return {
-      style: 'width: 91%; height: 350px',
+      style: 'width: 97.5%; height: 350px',
+      avatarSize: 70,
     };
   },
 };
@@ -191,16 +399,20 @@ export default {
 <style lang="scss" scoped>
 @import "../scss/common/variables";
 
+.centered {
+  margin: 0 auto;
+}
+
 .map-wrapper {
   background: #F5F5F5;
   max-width: 1400px;
-  margin: auto;
+  @extend .centered;
   padding: 0 2em 200px;
 }
 
 .map-content {
+  @extend .centered;
   max-width: 1200px;
-  margin: 0 auto;
   padding-top: 40px;
 }
 
@@ -208,10 +420,6 @@ export default {
   float: left;
   width: 50%;
   height: 50px;
-}
-
-.clearfixed {
-  clear: both;
 }
 
 .right-content {
@@ -222,6 +430,9 @@ export default {
 .adv-search-bttn {
   height: 70px;
   float: right;
+  @media screen and (max-width: $breakpoint-lg) {
+    margin-right: 1.1rem;
+  }
 }
 
 .button-position {
@@ -251,16 +462,56 @@ export default {
 }
 
 .card-grid-custom-margin {
-  margin-right: -2rem;
+  margin-right: -0.7rem;
   margin-bottom: 1rem;
 }
 
 .card-custom-width {
-  width: 95%;
+  width: 100%;
 }
 
 .row-custom-margin {
   margin-left: -2rem;
+}
+
+.card-icon {
+  width: 0.7rem;
+  height: 0.7rem;
+  color: $secondary-color;
+}
+
+.card-body span {
+  font-size: 0.9rem;
+}
+
+.btn-light-outline {
+  border-color: $light-color;
+  font-size: 0.7rem;
+  color: $light-color;
+}
+
+.row-max-width {
+  max-width: 1200px;
+}
+
+.mid-on-small {
+  @media screen and (max-width: $breakpoint-lg) {
+    margin: 0 auto;
+  }
+}
+
+.card-decor {
+  color: white;
+}
+
+.card-decor__odd {
+  @extend .card-decor;
+  background-image: url(https://jumpcut.com/img/jumpcut-homepage/va-bg.jpg);
+}
+
+.card-decor__even {
+  @extend .card-decor;
+  background-image: url(https://jumpcut.com/img/jumpcut-homepage/aim-bg.jpg);
 }
 
 h1 {
