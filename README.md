@@ -1,5 +1,7 @@
 # invision-app
 
+Project is deployed here: https://sprguillen.github.io/invision-app/
+
 ## Project setup
 ```
 yarn install
