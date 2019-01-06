@@ -7,8 +7,13 @@
     </div>
     <div class="right-side">
       <p>
-        Refund Policy | Contact Us | Privacy Policy | Terms of Service |
-          Earnings Disclaimer | Testimonial Disclosure | Affiliate Disclosure
+        <a href="#">Refund Policy</a> |
+        <a href="#">Contact Us</a> |
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Service</a> |
+        <a href="#">Earnings Disclaimer</a> |
+        <a href="#">Testimonial Disclosure</a> |
+        <a href="#">Affiliate Disclosure</a>
       </p>
     </div>
   </footer>
@@ -61,6 +66,7 @@ export default {
     margin: 0 auto;
     width: 800px;
     margin-top: 1rem;
+    text-align: center;
   }
 
   @media screen and (min-width: $breakpoint-lg) {
@@ -68,5 +74,14 @@ export default {
     float: left;
     margin-top: 1rem;
   }
+}
+
+.right-side p a {
+  color: white;
+  text-decoration: none;
+}
+
+.right-side p a:hover {
+  color: $teal;
 }
 </style>

@@ -135,10 +135,6 @@ span.avatar-name {
   vertical-align: top;
 }
 
-.toggler-white {
-  color: white;
-}
-
 .color-white {
   color: white;
 }

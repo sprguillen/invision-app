@@ -1,5 +1,5 @@
 <template>
-  <section data-aos="fade" data-aos-duration="3000">
+  <section data-aos="fade" data-aos-duration="7000" data-aos-delay="100">
     <div class="map-wrapper">
       <div class="map-content">
         <div class="row row-max-width">
@@ -18,16 +18,16 @@
           >
             <button
               type="button"
-              class="col-lg-4 col-md-4 col-sm-8 col-8 btn btn-light adv-search-bttn"
+              class="col-lg-4 col-md-4 col-sm-8 col-8 btn btn-dark adv-search-bttn"
             >Advanced Search</button>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
             <GmapMap
+              map-type-id="terrain"
               :center="{lat:1.38, lng:103.8}"
               :zoom="12"
-              map-type-id="terrain"
               :style="this.style"
             >
             </GmapMap>
@@ -35,10 +35,17 @@
         </div>
         <div class="result-grid ml-3">
           <div class="row">
-            <p>Viewing <strong>12</strong> or <strong>12</strong> results</p>
+            <p
+              data-aos="flip-right"
+              data-aos-duration="1000"
+            >
+              Viewing <strong>12</strong> or <strong>12</strong> results
+            </p>
           </div>
           <div class="row row-custom-margin">
             <div
+              v-for="person in persons"
+              :key="person.id"
               data-aos="fade-down"
               data-aos-duration="1000"
               class="
@@ -47,327 +54,29 @@
                 col-sm-6
                 col-12
                 card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__odd">
+              "
+              @mouseover="hoverCard(person.id)"
+              @mouseout="hoverCard(-1)"
+            >
+              <div
+                class="card card-custom-width"
+                :class="{
+                  'add-opacity': !isSelected(person.id),
+                  'card-decor__even': person.id % 2 === 0,
+                  'card-decor__odd': person.id % 2 !== 0
+                }"
+              >
                 <div class="card-body text-center">
-                  <avatar class="centered" username="Jane Doe" :size="avatarSize"></avatar>
-                  <strong>1. Jane Doe</strong>
+                  <avatar class="centered" :username="person.name" :size="avatarSize"></avatar>
+                  <strong>{{ person.id }}. {{ person.name }}</strong>
                   <div class="text-center">
                     <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
+                    <span>{{ person.location }}</span>
                   </div>
                   <div class="text-center">
-                    <span>Vlog | Cooking | Arts</span>
+                    <span>{{ person.hobbies }}</span>
                   </div>
                   <div class="mt-1">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__even">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="Robert Watajorski" :size="avatarSize"></avatar>
-                  <strong>2. Robert Watajorski</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Cooking | Arts</span>
-                  </div>
-                  <div class="mt-1 centered">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__odd">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="Hannah Montana" :size="avatarSize"></avatar>
-                  <strong>3. Hannah Montana</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Cooking | Arts</span>
-                  </div>
-                  <div class="mt-1 centered">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__even">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="Danny Ainge" :size="avatarSize"></avatar>
-                  <strong>4. Danny Ainge</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Cooking | Arts</span>
-                  </div>
-                  <div class="mt-1 centered">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__odd">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="Michael Jordan" :size="avatarSize"></avatar>
-                  <strong>5. Michael Jordan</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Cooking | Basketball</span>
-                  </div>
-                  <div class="mt-1 centered">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__even">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="Hakeem Olajuwon" :size="avatarSize"></avatar>
-                  <strong>6. Hakeem Olajuwon</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Cooking | Basketball</span>
-                  </div>
-                  <div class="mt-1 centered">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__odd">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="Victor Wooten" :size="avatarSize"></avatar>
-                  <strong>7. Victor Wooten</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Bass | Martial Arts</span>
-                  </div>
-                  <div class="mt-1 centered">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__even">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="John Patitucci" :size="avatarSize"></avatar>
-                  <strong>8. John Patitucci</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Bass | Brazilian Culture</span>
-                  </div>
-                  <div class="mt-1 centered">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__odd">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="Roger Palageer" :size="avatarSize"></avatar>
-                  <strong>9. Roger Palageer</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Cooking | Daydreaming</span>
-                  </div>
-                  <div class="mt-1 centered">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__even">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="Zilly Zohan" :size="avatarSize"></avatar>
-                  <strong>10. Zilly Zohan</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Cooking | Espionage</span>
-                  </div>
-                  <div class="mt-1 centered">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__odd">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="Fredie Mercury" :size="avatarSize"></avatar>
-                  <strong>11. Freddie Mercury</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Cooking | Singing</span>
-                  </div>
-                  <div class="mt-1 centered">
-                    <button class="btn btn-light-outline mr-3">View Channel</button>
-                    <button class="btn btn-light-outline">Send Message</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1000"
-              class="
-                col-lg-3
-                col-md-4
-                col-sm-6
-                col-12
-                card-grid-custom-margin
-              ">
-              <div class="card card-custom-width card-decor__even">
-                <div class="card-body text-center">
-                  <avatar class="centered" username="Mark Zuckemberg" :size="avatarSize"></avatar>
-                  <strong>12. Mark Zuckemberg</strong>
-                  <div class="text-center">
-                    <v-icon name="map-marker" class="card-icon" />
-                    <span>Bishan Singapore · 5 miles away</span>
-                  </div>
-                  <div class="text-center">
-                    <span>Vlog | Cooking | Programming</span>
-                  </div>
-                  <div class="mt-1 centered">
                     <button class="btn btn-light-outline mr-3">View Channel</button>
                     <button class="btn btn-light-outline">Send Message</button>
                   </div>
@@ -391,8 +100,94 @@ export default {
   data() {
     return {
       style: 'width: 97.5%; height: 350px',
+      selectedCard: -1,
       avatarSize: 70,
+      persons: [
+        {
+          id: 1,
+          name: 'Mark Zuckemberg',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Vlog | Cooking | Programming',
+        },
+        {
+          id: 2,
+          name: 'Jane Doe',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Vlog | Cooking | Travelling',
+        },
+        {
+          id: 3,
+          name: 'Bilbo Baggins',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Stealing | Writing | Travelling',
+        },
+        {
+          id: 4,
+          name: 'Gandalf Olorin',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Sorcery | Drinking | Travelling',
+        },
+        {
+          id: 5,
+          name: 'Lord Valdemort',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Sorcery | Studying | Sleeping',
+        },
+        {
+          id: 6,
+          name: 'Marcus Miller',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Bass | Producing | Recording',
+        },
+        {
+          id: 7,
+          name: 'Son Goku',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Eating | Sleeping | Training',
+        },
+        {
+          id: 8,
+          name: 'Baki Hanma',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Fighting | Sleeping | Eating',
+        },
+        {
+          id: 9,
+          name: 'Leonardo Otto',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'World domination | Sleeping',
+        },
+        {
+          id: 10,
+          name: 'John Paticucci',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Bass | Brazilian Culture | Travelling',
+        },
+        {
+          id: 11,
+          name: 'Victor Wooten',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Bass | Cooking | Martial Arts',
+        },
+        {
+          id: 12,
+          name: 'Rober Jaworski',
+          location: 'Bishan Singapore · 5 miles away',
+          hobbies: 'Vlog | Politics | Basketball',
+        },
+      ],
     };
+  },
+  methods: {
+    /**
+     * Hover effect
+     */
+    hoverCard(selectedIndex) {
+      this.selectedCard = selectedIndex;
+    },
+    isSelected(cardIndex) {
+      return this.selectedCard === cardIndex;
+    },
   },
 };
 </script>
@@ -512,6 +307,10 @@ export default {
 .card-decor__even {
   @extend .card-decor;
   background-image: url(https://jumpcut.com/img/jumpcut-homepage/aim-bg.jpg);
+}
+
+.card.add-opacity {
+  opacity:0.2;
 }
 
 h1 {

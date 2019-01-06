@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="content" data-aos="fade" data-aos-duration="3000">
+    <div class="content" data-aos="fade" data-aos-duration="5000">
       <article>
         <div class="header-wrap">
           <header>
