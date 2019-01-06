@@ -1,0 +1,29 @@
+// Colors
+$blue: #007bff;
+$gray: #6c757d;
+$green: #28a745;
+$red: #dc3545;
+$yellow: #ffc107;
+$teal: #33FFFF;
+$light: #f8f9fa;
+$dark: #343a40;
+
+$primary-color: $blue;
+$secondary-color: $gray;
+$success-color: $green;
+$danger-color: $red;
+$warning-color: $yellow;
+$info-color: $teal;
+$light-color: $light;
+$dark-color: $dark;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Custom
+$padding-horizontal:20px;
+$text-box-lg: 16rem;
+$text-box-sm: 9.5rem;
